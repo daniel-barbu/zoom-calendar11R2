@@ -21,7 +21,7 @@ else if (670 <= minutesToday && minutesToday < 715) hour=5;
 else if (715 <= minutesToday && minutesToday < 760) hour=6;
 
 if (typeof id[dayOfWeek][hour] != "undefined"){ 
-  document.getElementById("hourInfo")+=hour[dayOfWeek][hour];
+  document.getElementById("hourInfo")="Ora actuala: "+ hour[dayOfWeek][hour];
   document.getElementById("meetingInfo")="Meeting ID: " id[dayOfWeek][hour] + " — Passcode: " + pass[dayOfWeek][hour];
   document.getElementById("browserLink").href="http://zoom.us/wc/join/" + id[dayOfWeek][hour];
   document.getElementById("appLink").href="zoommtg://zoom.us/join?action=join&confno=" + id[dayOfWeek][hour];}
