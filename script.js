@@ -9,6 +9,12 @@ var pass=[["-1", "0", "clasa11R2", "clasa11R2", "3u5ZSY", "3vusvY"],            
                 ["2aqEhT", "b6z4qD", "1NpS2Q", "1NpS2Q", "0", "8gqSUv"],                //wednesday
                 ["0", "0JsqgQ", "clasa11R2", "clasa11R2", "0", "pa5WfX", "mateC"],      //thursday
                 ["806phK", "mateC", "b6z4qD", "b6z4qD", "0", "0"]];                     //friday
+
+var hour=[["-1", "SC", "INFORMATICA", "INFORMATICA", "SPORT", "FRANCEZA"],                                //monday
+                ["MATEMATICA", "MATEMATICA", "FIZICA", "ENGLEZA", "ENGLEZA", "DIRIGENTIE"],               //tuesday
+                ["GEOGRAFIE", "ROMANA", "FIZICA", "FIZICA", "FRANCEZA", "ECONOMIE"],                      //wednesday
+                ["RELIGIE", "BIOLOGIE", "INFORMATICA", "INFORMATICA", "ENGLEZA", "CHIMIE", "MATEMATICA"], //thursday
+                ["ISTORIE", "MATEMATICA", "ROMANA", "ROMANA", "ENGLEZA", "ENGLEZA"]];                     //friday
  
 var dayOfWeek=new Date().getDay()-1;//0-4
 var minutesToday=new Date().getHours()*60+new Date().getMinutes(), hour; //0-6
