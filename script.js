@@ -1,8 +1,8 @@
-var id=[[-1, 0, 93348152492, 93348152492, 7085101158, 8216620219],                      //monday
-            [2992554819, 2992554819, 4640596961, 0, 0, 0],                              //tuesday
-            [4928189003, 7956423044, 4640596961, 4640596961, 0, 3227920578],            //wednesday
-            [0, 6306944163, 93348152492, 93348152492, 0, 89999600136, 2992554819],      //thursday
-            [4515724423, 2992554819, 7956423044, 7956423044, 0, 0]];                    //friday
+var id=[["-1", "0", "93348152492", "93348152492", "7085101158", "8216620219"],                      //monday
+            ["2992554819", "2992554819", "4640596961", "0", "0", "0"],                              //tuesday
+            ["4928189003", "7956423044", "4640596961", "4640596961", "0", "3227920578"],            //wednesday
+            ["0", "6306944163", "93348152492", "93348152492", "0", "89999600136", "2992554819"],    //thursday
+            ["4515724423", "2992554819", "7956423044", "7956423044", "0", "0"]];                    //friday
            
 var pass=[["-1", "0", "clasa11R2", "clasa11R2", "3u5ZSY", "3vusvY"],                    //monday
                 ["mateC", "mateC", "1NpS2Q", "0", "0", "0"],                            //tuesday
@@ -26,9 +26,11 @@ else if (625 <= minutesToday && minutesToday < 670) hour=4;
 else if (670 <= minutesToday && minutesToday < 715) hour=5;
 else if (715 <= minutesToday && minutesToday < 760) hour=6;
 
+function parseID(var x) return x.substr(0, 3) + " " + x.substr(3, 3) + " " + x.substr(6, 4);
+
 if (typeof id[dayOfWeek][hour] != "undefined"){ 
   document.getElementById("hourInfo")="Ora actuala: "+ hour[dayOfWeek][hour];
-  document.getElementById("meetingInfo")="Meeting ID: " id[dayOfWeek][hour] + " — Passcode: " + pass[dayOfWeek][hour];
-  document.getElementById("browserLink").href="http://zoom.us/wc/join/" + id[dayOfWeek][hour];
-  document.getElementById("appLink").href="zoommtg://zoom.us/join?action=join&confno=" + id[dayOfWeek][hour];}
+  document.getElementById("meetingInfo")="Meeting ID: " parseID(id[dayOfWeek][hour]) + " — Passcode: " + pass[dayOfWeek][hour];
+  document.getElementById("browserLink").href="http://zoom.us/wc/join/" + parseID(id[dayOfWeek][hour]);
+  document.getElementById("appLink").href="zoommtg://zoom.us/join?action=join&confno=" + parseID(id[dayOfWeek][hour]);}
 else {}
