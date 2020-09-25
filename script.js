@@ -26,7 +26,7 @@ else if (625 <= minutesToday && minutesToday < 670) hour=4;
 else if (670 <= minutesToday && minutesToday < 715) hour=5;
 else if (715 <= minutesToday && minutesToday < 760) hour=6;
 
-function parseID(var x) return x.substr(0, 3) + " " + x.substr(3, 3) + " " + x.substr(6, 4);
+function parseID(x) return x.substr(0, 3) + " " + x.substr(3, 3) + " " + x.substr(6, 4);
 
 if (typeof id[dayOfWeek][hour] != "undefined"){ 
   document.getElementById("hourInfo")="Ora actuala: "+ hour[dayOfWeek][hour];
