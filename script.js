@@ -33,4 +33,6 @@ if (typeof id[dayOfWeek][hour] != "undefined"){
   document.getElementById("meetingInfo")="Meeting ID: " parseID(id[dayOfWeek][hour]) + " — Passcode: " + pass[dayOfWeek][hour];
   document.getElementById("browserLink").href="http://zoom.us/wc/join/" + parseID(id[dayOfWeek][hour]);
   document.getElementById("appLink").href="zoommtg://zoom.us/join?action=join&confno=" + parseID(id[dayOfWeek][hour]);}
-else {}
+else {
+  document.getElementById("hourInfo")="Ora actuala: IN AFARA PROGRAMULUI";
+  document.getElementById("meetingInfo")="Meeting ID: 000 000 0000 — Passcode: 000000";}
