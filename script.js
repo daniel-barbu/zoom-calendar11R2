@@ -29,8 +29,8 @@ else if (715 <= min && min < 760) hour=6;
 function parseID(x) {return x.substr(0, 3) + " " + x.substr(3, 3) + " " + x.substr(6, 4);}
 
 if (typeof id[dayOfWeek][hour] != "undefined"){ 
-  document.getElementById("hourInfo")="Ora actuala: "+ hourTable[day][hour];
-  document.getElementById("meetingInfo")="Meeting ID: " parseID(idTable[day][hour]) + " — Passcode: " + passTable[day][hour];
+  document.getElementById("hourInfo").innerHTML="Ora actuala: "+ hourTable[day][hour];
+  document.getElementById("meetingInfo").innerHTML="Meeting ID: " parseID(idTable[day][hour]) + " — Passcode: " + passTable[day][hour];
   document.getElementById("browserLink").href="http://zoom.us/wc/join/" + parseID(idTable[day][hour]);
   document.getElementById("appLink").href="zoommtg://zoom.us/join?action=join&confno=" + parseID(idTable[day][hour]);}
 else {
