@@ -28,6 +28,8 @@ else if (715 <= min && min < 760) hour=6;
 
 function parseID(x) {return x.substr(0, 3) + " " + x.substr(3, 3) + " " + x.substr(6, 4);}
 
+day=1; hour=2;
+
 if (typeof idTable[day] == "undefined" || typeof idTable[day][hour] == "undefined")
   document.getElementById("hourInfo").innerHTML="IN AFARA PROGRAMULUI";
 else {
