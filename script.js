@@ -17,7 +17,7 @@ var hourTable=[["-1", "SC", "INFORMATICA", "INFORMATICA", "SPORT", "FRANCEZA"], 
                 ["ISTORIE", "MATEMATICA", "ROMANA", "ROMANA", "ENGLEZA", "ENGLEZA"]];                     //friday
  
 var day=new Date().getDay()-1;//0-4
-var min=new Date().getHours()*60+new Date().getMinutes(), hStart, hEnd; hour; //0-6
+var min=new Date().getHours()*60+new Date().getMinutes(), hStart, hEnd, hNow=new Date().getHours()+":"+new Date().getMinutes(), hour; //0-6
 if (445 <= min && min < 490) {hour=0; hStart="7:30"; hEnd="8:10";}
 else if (490 <= min && min < 535) {hour=1; hStart="8:15"; hEnd="8:55";}
 else if (535 <= min && min < 580) {hour=2; hStart="9:00"; hEnd="9:40";}
@@ -39,7 +39,7 @@ if (typeof idTable[day] == "undefined" || typeof idTable[day][hour] == "undefine
   document.getElementById("appLink").href="";}
 else {
   document.getElementById("hourInfo").innerHTML="Ora actuala: " + hourTable[day][hour];
-  document.getElementById("hourProgress").innerHTML="|-----------------------------------------------|<br>" + hStart + "---" + hEnd;
+  document.getElementById("hourProgress").innerHTML="|-----------------------------------------------|<br>" + hStart + "---" + hNow + "---" + hEnd;
   document.getElementById("idInfo").innerHTML="Meeting ID: " + parseID(idTable[day][hour]);
   document.getElementById("passInfo").innerHTML="Passcode: " + passTable[day][hour];
   document.getElementById("browserLink").href="http://zoom.us/wc/join/" + idTable[day][hour];
