@@ -17,14 +17,14 @@ var hourTable=[["-1", "SC", "INFORMATICA", "INFORMATICA", "SPORT", "FRANCEZA"], 
                 ["ISTORIE", "MATEMATICA", "ROMANA", "ROMANA", "ENGLEZA", "ENGLEZA"]];                     //friday
  
 var day=new Date().getDay()-1;//0-4
-var min=new Date().getHours()*60+new Date().getMinutes(), hour; //0-6
-if (445 <= min && min < 490) hour=0;
-else if (490 <= min && min < 535) hour=1;
-else if (535 <= min && min < 580) hour=2;
-else if (580 <= min && min < 625) hour=3;
-else if (625 <= min && min < 670) hour=4;
-else if (670 <= min && min < 715) hour=5;
-else if (715 <= min && min < 760) hour=6;
+var min=new Date().getHours()*60+new Date().getMinutes(), hStart, hEnd; hour; //0-6
+if (445 <= min && min < 490) {hour=0; hStart="7:30"; hEnd="8:10";}
+else if (490 <= min && min < 535) {hour=1; hStart="8:15"; hEnd="8:55";}
+else if (535 <= min && min < 580) {hour=2; hStart="9:00"; hEnd="9:40";}
+else if (580 <= min && min < 625) {hour=3; hStart="9:45"; hEnd="10:25";}
+else if (625 <= min && min < 670) {hour=4; hStart="10:30"; hEnd="11:10";}
+else if (670 <= min && min < 715) {hour=5; hStart="11:15"; hEnd="11:55";}
+else if (715 <= min && min < 760) {hour=6; hStart="12:00"; hEnd="12:40";}
 
 function parseID(x) {return x.substr(0, 3) + " " + x.substr(3, 3) + " " + x.substr(6, 4);}
 
@@ -39,7 +39,7 @@ if (typeof idTable[day] == "undefined" || typeof idTable[day][hour] == "undefine
   document.getElementById("appLink").href="";}
 else {
   document.getElementById("hourInfo").innerHTML="Ora actuala: " + hourTable[day][hour];
-  document.getElementById("hourProgress").innerHTML="|-----------------------------------------------|<br>";
+  document.getElementById("hourProgress").innerHTML="|-----------------------------------------------|<br>" + hStart + "---" + hEnd;
   document.getElementById("idInfo").innerHTML="Meeting ID: " + parseID(idTable[day][hour]);
   document.getElementById("passInfo").innerHTML="Passcode: " + passTable[day][hour];
   document.getElementById("browserLink").href="http://zoom.us/wc/join/" + idTable[day][hour];
