@@ -31,7 +31,7 @@ else if (625 <= min && min < 670) {hour=4; hStart="10:30"; hEnd="11:10"; perc=(m
 else if (670 <= min && min < 715) {hour=5; hStart="11:15"; hEnd="11:55"; perc=(min-675)/40;}
 else if (715 <= min && min < 760) {hour=6; hStart="12:00"; hEnd="12:40"; perc=(min-720)/40;}
 
-if (typeof idTable[day] == "undefined" || typeof idTable[day][hour] == "undefined") {
+if (typeof idTable[day] == "undefined" || typeof idTable[day][hour] == "undefined")
   document.getElementsByTagName("div")[0].innerHTML='<h1 id="hourInfo">IN AFARA PROGRAMULUI</h1>';
 else {
   document.getElementById("hourInfo").innerHTML="Ora actuala: " + hourTable[day][hour];
