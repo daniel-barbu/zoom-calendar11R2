@@ -32,12 +32,7 @@ else if (670 <= min && min < 715) {hour=5; hStart="11:15"; hEnd="11:55"; perc=(m
 else if (715 <= min && min < 760) {hour=6; hStart="12:00"; hEnd="12:40"; perc=(min-720)/40;}
 
 if (typeof idTable[day] == "undefined" || typeof idTable[day][hour] == "undefined") {
-  document.getElementById("hourInfo").innerHTML="IN AFARA PROGRAMULUI";
-  document.getElementById("hourProgress").innerHTML="";
-  document.getElementById("idInfo").innerHTML="";
-  document.getElementById("passInfo").innerHTML="";
-  document.getElementById("browserLink").href="";
-  document.getElementById("appLink").href="";}
+  document.getElementsByTagName("div")[0].innerHTML='<h1 id="hourInfo">IN AFARA PROGRAMULUI</h1>';
 else {
   document.getElementById("hourInfo").innerHTML="Ora actuala: " + hourTable[day][hour];
   document.getElementById("hourProgress").innerHTML="|" + "-".repeat(perc*70) + "|" + "-".repeat((1-perc)*70) + "|<br>" + hStart + " "+ ".".repeat(perc*72) + " " + hNow + " "+ ".".repeat((1-perc)*72) + " " + hEnd;
