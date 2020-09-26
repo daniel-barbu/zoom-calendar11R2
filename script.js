@@ -30,10 +30,16 @@ function parseID(x) {return x.substr(0, 3) + " " + x.substr(3, 3) + " " + x.subs
 
 day=1; hour=2;
 
-if (typeof idTable[day] == "undefined" || typeof idTable[day][hour] == "undefined")
+if (typeof idTable[day] == "undefined" || typeof idTable[day][hour] == "undefined") {
   document.getElementById("hourInfo").innerHTML="IN AFARA PROGRAMULUI";
+  document.getElementById("hourProgress").innerHTML="";
+  document.getElementById("idInfo").innerHTML="";
+  document.getElementById("passInfo").innerHTML="";
+  document.getElementById("browserLink").href="";
+  document.getElementById("appLink").href="";}
 else {
   document.getElementById("hourInfo").innerHTML="Ora actuala: " + hourTable[day][hour];
+  document.getElementById("hourProgress").innerHTML="|-----------------------------------------------|<br>";
   document.getElementById("idInfo").innerHTML="Meeting ID: " + parseID(idTable[day][hour]);
   document.getElementById("passInfo").innerHTML="Passcode: " + passTable[day][hour];
   document.getElementById("browserLink").href="http://zoom.us/wc/join/" + idTable[day][hour];
