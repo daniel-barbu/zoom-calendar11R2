@@ -18,6 +18,7 @@ var hourTable=[["-1", "SC", "INFORMATICA", "INFORMATICA", "SPORT", "FRANCEZA"], 
 
 var hStart=["7:30", "8:15", "9:00", "9:45", "10:30", "11:15", "12:00"];
 var hEnd=["8:10", "8:55", "9:40", "10:25", "11:10", "11:55", "12:40"];
+var hMin=["445", "490", "535", "580", "625", "670", "715", "760"];
 
 function parseID(x) {return x.substr(0, 3) + " " + x.substr(3, 3) + " " + x.substr(6, 4);}
 
@@ -26,14 +27,15 @@ function main() {
 var day=new Date().getDay()-1;//0-4 
 var min=new Date().getHours()*60+new Date().getMinutes(), hNow, hour; //0-6
 if (new Date().getMinutes()<10) hNow=new Date().getHours()+":0"+new Date().getMinutes(); else hNow=new Date().getHours()+":"+new Date().getMinutes();
-if (445 <= min && min < 490) {hour=0; perc=(min-450)/40;}
-else if (490 <= min && min < 535) {hour=1; perc=(min-495)/40;}
-else if (535 <= min && min < 580) {hour=2; perc=(min-540)/40;}
-else if (580 <= min && min < 625) {hour=3; perc=(min-585)/40;}
-else if (625 <= min && min < 670) {hour=4; perc=(min-630)/40;}
-else if (670 <= min && min < 715) {hour=5; perc=(min-675)/40;}
-else if (715 <= min && min < 760) {hour=6; perc=(min-720)/40;}
-
+if (hMin[0] <= min && min < hMin[1]) hour=0;
+else if (hMin[1] <= min && min < hMin[2]) hour=1;
+else if (hMin[2] <= min && min < hMin[3]) hour=2;
+else if (hMin[3] <= min && min < hMin[4]) hour=3;
+else if (hMin[4] <= min && min < hMin[5]) hour=4;
+else if (hMin[5] <= min && min < hMin[6]) hour=5;
+else if (hMin[6] <= min && min < hMin[7]) hour=6;
+perc=(min-(hMin[hour]+5))/40;
+        
 if (typeof idTable[day] == "undefined" || typeof idTable[day][hour] == "undefined")
   document.getElementsByTagName("div")[0].innerHTML='<h1 id="hourInfo">IN AFARA PROGRAMULUI</h1>';
 else {
@@ -43,4 +45,5 @@ else {
   document.getElementById("passInfo").innerHTML="Passcode: " + passTable[day][hour];
   document.getElementById("browserLink").href="http://zoom.us/wc/join/" + idTable[day][hour];
   document.getElementById("appLink").href="zoommtg://zoom.us/join?action=join&confno=" + idTable[day][hour];}
+if (perc < 0) inervalVar = setInterval(function(){document.getElementById("hourProgress").innerHTML="Ora va incepe in " + hMin[hour]+5-min + ":" + (60-new Date().getSeconds());}, 1000);
 }
