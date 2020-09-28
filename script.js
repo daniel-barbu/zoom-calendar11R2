@@ -1,13 +1,13 @@
-var idTable=[["-1", "0", "93348152492", "93348152492", "7085101158", "8216620219"],                 //monday
+var idTable=[["-1", "0", "92803342050", "92803342050", "7085101158", "8216620219"],                 //monday
             ["2992554819", "2992554819", "4640596961", "0", "0", "0"],                              //tuesday
             ["4928189003", "7956423044", "4640596961", "4640596961", "0", "3227920578"],            //wednesday
-            ["0", "6306944163", "93348152492", "93348152492", "0", "89999600136", "2992554819"],    //thursday
+            ["0", "6306944163", "92803342050", "92803342050", "0", "89999600136", "2992554819"],    //thursday
             ["4515724423", "2992554819", "7956423044", "7956423044", "4266725480", "4266725480"]];  //friday
            
-var passTable=[["-1", "0", "clasa11R2", "clasa11R2", "3u5ZSY", "3vusvY"],               //monday
+var passTable=[["-1", "0", "cosbuc11R2", "cosbuc11R2", "3u5ZSY", "3vusvY"],               //monday
                 ["mateC", "mateC", "1NpS2Q", "0", "0", "0"],                            //tuesday
                 ["2aqEhT", "b6z4qD", "1NpS2Q", "1NpS2Q", "0", "8gqSUv"],                //wednesday
-                ["0", "0JsqgQ", "clasa11R2", "clasa11R2", "0", "pa5WfX", "mateC"],      //thursday
+                ["0", "0JsqgQ", "cosbuc11R2", "cosbuc11R2", "0", "pa5WfX", "mateC"],      //thursday
                 ["806phK", "mateC", "b6z4qD", "b6z4qD", "h2u4g6o8", "h2u4g6o8"]];       //friday
 
 var hourTable=[["-1", "SC", "INFORMATICA", "INFORMATICA", "SPORT", "FRANCEZA"],                           //monday
