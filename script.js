@@ -34,8 +34,8 @@ else if (715 <= min && min < 760) {hour=6; hStart="12:00"; hEnd="12:40"; perc=(m
 if (typeof idTable[day] == "undefined" || typeof idTable[day][hour] == "undefined")
   document.getElementsByTagName("div")[0].innerHTML='<h1 id="hourInfo">IN AFARA PROGRAMULUI</h1>';
 else {
-  document.getElementById("hourInfo").innerHTML="Ora actuala: " + hourTable[day][hour];
-  document.getElementById("hourProgress").innerHTML="|" + "-".repeat(perc*70) + "<span>|</span>" + "-".repeat((1-perc)*70) + "|<br>" + hStart + " "+ ".".repeat(perc*72) + " <span>" + hNow + "</span> "+ ".".repeat((1-perc)*72) + " " + hEnd;
+  document.getElementById("hourInfo").innerHTML="Ora actuala: <span id='lucidaText'>" + hourTable[day][hour] +"</span>";
+  document.getElementById("hourProgress").innerHTML="|" + "-".repeat(perc*70) + "<span id='whiteText'>|</span>" + "-".repeat((1-perc)*70) + "|<br>" + hStart + " "+ ".".repeat(perc*72) + " <span id='whiteText'>" + hNow + "</span> "+ ".".repeat((1-perc)*72) + " " + hEnd;
   document.getElementById("idInfo").innerHTML="Meeting ID: " + parseID(idTable[day][hour]);
   document.getElementById("passInfo").innerHTML="Passcode: " + passTable[day][hour];
   document.getElementById("browserLink").href="http://zoom.us/wc/join/" + idTable[day][hour];
