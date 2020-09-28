@@ -35,7 +35,7 @@ if (typeof idTable[day] == "undefined" || typeof idTable[day][hour] == "undefine
   document.getElementsByTagName("div")[0].innerHTML='<h1 id="hourInfo">IN AFARA PROGRAMULUI</h1>';
 else {
   document.getElementById("hourInfo").innerHTML="Ora actuala: <span id='lucidaText'>" + hourTable[day][hour] +"</span>";
-  document.getElementById("hourProgress").innerHTML="|" + "-".repeat(perc*70) + "<span id='whiteText'>|</span>" + "-".repeat((1-perc)*70) + "|<br>" + hStart + " <span id='invisibleText'>"+ ".".repeat(perc*72) + "</span> <span id='whiteText'>" + hNow + "</span> <span id='invisibleText'>"+ ".".repeat((1-perc)*72) + "</span> " + hEnd;
+  document.getElementById("hourProgress").innerHTML="|" + "-".repeat(perc*(70+Math.abs(0.5-perc)*15)) + "<span id='whiteText'>|</span>" + "-".repeat((1-perc)*(70+Math.abs(0.5-perc)*15)) + "|<br>" + hStart + " <span id='invisibleText'>"+ ".".repeat(perc*72) + "</span> <span id='whiteText'>" + hNow + "</span> <span id='invisibleText'>"+ ".".repeat((1-perc)*72) + "</span> " + hEnd;
   document.getElementById("idInfo").innerHTML="Meeting ID: " + parseID(idTable[day][hour]);
   document.getElementById("passInfo").innerHTML="Passcode: " + passTable[day][hour];
   document.getElementById("browserLink").href="http://zoom.us/wc/join/" + idTable[day][hour];
