@@ -35,7 +35,7 @@ if (typeof idTable[day] == "undefined" || typeof idTable[day][hour] == "undefine
   document.getElementsByTagName("div")[0].innerHTML='<h1 id="hourInfo">IN AFARA PROGRAMULUI</h1>';
 else {
   document.getElementById("hourInfo").innerHTML="Ora actuala: " + hourTable[day][hour];
-  document.getElementById("hourProgress").innerHTML="|" + "-".repeat(perc*70) + "|" + "-".repeat((1-perc)*70) + "|<br>" + hStart + " "+ ".".repeat(perc*72) + " " + hNow + " "+ ".".repeat((1-perc)*72) + " " + hEnd;
+  document.getElementById("hourProgress").innerHTML="|" + "-".repeat(perc*70) + "<p>|</p>" + "-".repeat((1-perc)*70) + "|<br>" + hStart + " "+ ".".repeat(perc*72) + " <p>" + hNow + "</p> "+ ".".repeat((1-perc)*72) + " " + hEnd;
   document.getElementById("idInfo").innerHTML="Meeting ID: " + parseID(idTable[day][hour]);
   document.getElementById("passInfo").innerHTML="Passcode: " + passTable[day][hour];
   document.getElementById("browserLink").href="http://zoom.us/wc/join/" + idTable[day][hour];
