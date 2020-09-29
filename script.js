@@ -24,7 +24,7 @@ function parseID(x) {return x.substr(0, 3) + " " + x.substr(3, 3) + " " + x.subs
 
 function main() {
 var day=new Date().getDay()-1;//0-4 
-var min=new Date().getHours()*60+new Date().getMinutes(), hNow, hour; /*0-6 min=711;*/
+var min=new Date().getHours()*60+new Date().getMinutes(), hNow, hour; /*0-6*/ min=493;
 if (new Date().getMinutes()<10) hNow=new Date().getHours()+":0"+new Date().getMinutes(); else hNow=new Date().getHours()+":"+new Date().getMinutes();
 if (hMin[0] <= min && min < hMin[1]) hour=0;
 else if (hMin[1] <= min && min < hMin[2]) hour=1;
@@ -34,15 +34,22 @@ else if (hMin[4] <= min && min < hMin[5]) hour=4;
 else if (hMin[5] <= min && min < hMin[6]) hour=5;
 else if (hMin[6] <= min && min < hMin[7]) hour=6;
 perc=(min-(hMin[hour]+5))/40;
+console.log (min, hour, hMin[hour], perc, hMin[hour]+5-min, hMin[hour]+5-min.toString());
         
 if (typeof idTable[day] == "undefined" || typeof idTable[day][hour] == "undefined")
   document.getElementsByTagName("div")[0].innerHTML='<h1 id="hourInfo">IN AFARA PROGRAMULUI</h1>';
+else if (perc < 0)
+  intervalVar = setInterval(function(){
+    document.getElementById("hourProgress").innerHTML="Ora va incepe in ";
+    if (60-new Date().getSeconds()<10) document.getElementById("hourProgress").innerHTML+=hMin[hour]+5-min + ":0" + (60-new Date().getSeconds());
+    else document.getElementById("hourProgress").innerHTML+=hMin[hour]+5-min + ":" + (60-new Date().getSeconds()); 
+  }, 1000);
 else {
+  clearInterval(intervalVar);
   document.getElementById("hourInfo").innerHTML="Ora actuala: <span id='lucidaText'>" + hourTable[day][hour] +"</span>";
   document.getElementById("hourProgress").innerHTML= hStart[hour] + " |" + "-".repeat(perc*70) + "<span id='whiteText'>|</span>" + "-".repeat((1-perc)*70) + "| " + hEnd[hour] + "<br>" + "<span id='invisibleText'>" + "-".repeat(perc*70-2) + "</span><span id='whiteText'>" + hNow + "</span><span id='invisibleText'>"+ "-".repeat((1-perc)*70-2) + "</span>";
   document.getElementById("idInfo").innerHTML="Meeting ID: " + parseID(idTable[day][hour]);
   document.getElementById("passInfo").innerHTML="Passcode: " + passTable[day][hour];
   document.getElementById("browserLink").href="http://zoom.us/wc/join/" + idTable[day][hour];
   document.getElementById("appLink").href="zoommtg://zoom.us/join?action=join&confno=" + idTable[day][hour];}
-if (perc < 0) inervalVar = setInterval(function(){ document.getElementById("hourProgress").innerHTML="Ora va incepe in " + hMin[hour]+5-min + ":" + (60-new Date().getSeconds()); }, 1000);
 } main(); setTimeout(function(){main(); setInterval(main, 60000);}, (60-new Date().getSeconds())*1000);
