@@ -51,6 +51,6 @@ else {
     else document.getElementById("hourProgress").innerHTML+=hMin[hour]+5-min + ":" + (60-new Date().getSeconds()); 
   }, 1000);
   else { 
-    clearInterval(intervalVar);
+    if (typeof intervalVar !== "undefined") clearInterval(intervalVar);
     document.getElementById("hourProgress").innerHTML= hStart[hour] + " |" + "-".repeat(perc*70) + "<span id='whiteText'>|</span>" + "-".repeat((1-perc)*70) + "| " + hEnd[hour] + "<br>" + "<span id='invisibleText'>" + "-".repeat(perc*70-2) + "</span><span id='whiteText'>" + hNow + "</span><span id='invisibleText'>"+ "-".repeat((1-perc)*70-2) + "</span>";}}
 } main(); setTimeout(function(){main(); setInterval(main, 60000);}, (60-new Date().getSeconds())*1000);
