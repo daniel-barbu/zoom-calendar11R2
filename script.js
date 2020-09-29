@@ -18,7 +18,7 @@ var hourTable=[["-1", "SC", "INFORMATICA", "INFORMATICA", "SPORT", "FRANCEZA"], 
 
 var hStart=["7:30", "8:15", "9:00", "9:45", "10:30", "11:15", "12:00"];
 var hEnd=["8:10", "8:55", "9:40", "10:25", "11:10", "11:55", "12:40"];
-var hMin=["445", "490", "535", "580", "625", "670", "715", "760"];
+var hMin=[445, 490, 535, 580, 625, 670, 715, 760];
 
 function parseID(x) {return x.substr(0, 3) + " " + x.substr(3, 3) + " " + x.substr(6, 4);}
 
@@ -44,5 +44,6 @@ else {
   document.getElementById("passInfo").innerHTML="Passcode: " + passTable[day][hour];
   document.getElementById("browserLink").href="http://zoom.us/wc/join/" + idTable[day][hour];
   document.getElementById("appLink").href="zoommtg://zoom.us/join?action=join&confno=" + idTable[day][hour];}
-if (perc < 0) inervalVar = setInterval(function(){document.getElementById("hourProgress").innerHTML="Ora va incepe in " + hMin[hour]+5-min + ":" + (60-new Date().getSeconds());}, 1000);
-} main(); setTimeout(function(){setInterval(main, 60000);}, (60-new Date().getSeconds())*1000);
+if (perc < 0) inervalVar = setInterval(function(){ document.getElementById("hourProgress").innerHTML="Ora va incepe in " + hMin[hour]+5-min + ":" + (60-new Date().getSeconds()); }, 1000);
+}
+main(); setTimeout(function(){setInterval(main, 60000);}, (60-new Date().getSeconds())*1000);
