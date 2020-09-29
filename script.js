@@ -24,7 +24,7 @@ function parseID(x) {return x.substr(0, 3) + " " + x.substr(3, 3) + " " + x.subs
 
 function main() {
 var day=new Date().getDay()-1;//0-4 
-var min=new Date().getHours()*60+new Date().getMinutes(), hNow, hour; //0-6 min=711;
+var min=new Date().getHours()*60+new Date().getMinutes(), hNow, hour; /*0-6 min=711;*/
 if (new Date().getMinutes()<10) hNow=new Date().getHours()+":0"+new Date().getMinutes(); else hNow=new Date().getHours()+":"+new Date().getMinutes();
 if (hMin[0] <= min && min < hMin[1]) hour=0;
 else if (hMin[1] <= min && min < hMin[2]) hour=1;
