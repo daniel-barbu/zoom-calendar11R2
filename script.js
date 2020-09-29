@@ -45,5 +45,4 @@ else {
   document.getElementById("browserLink").href="http://zoom.us/wc/join/" + idTable[day][hour];
   document.getElementById("appLink").href="zoommtg://zoom.us/join?action=join&confno=" + idTable[day][hour];}
 if (perc < 0) inervalVar = setInterval(function(){ document.getElementById("hourProgress").innerHTML="Ora va incepe in " + hMin[hour]+5-min + ":" + (60-new Date().getSeconds()); }, 1000);
-}
-main(); setTimeout(function(){setInterval(main, 60000);}, (60-new Date().getSeconds())*1000);
+} main(); setTimeout(function(){main(); setInterval(main, 60000);}, (60-new Date().getSeconds())*1000);
