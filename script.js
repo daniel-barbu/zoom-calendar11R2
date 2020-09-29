@@ -40,7 +40,7 @@ if (typeof idTable[day] == "undefined" || typeof idTable[day][hour] == "undefine
   document.getElementsByTagName("div")[0].innerHTML='<h1 id="hourInfo">IN AFARA PROGRAMULUI</h1>';
 else {
   document.getElementById("hourInfo").innerHTML="Ora actuala: <span id='lucidaText'>" + hourTable[day][hour] +"</span>";
-  document.getElementById("idInfo").innerHTML="Meeting ID: " + parseID(idTable[day][hour]);
+  document.getElementById("idInfo").innerHTML="Meeting ID: " + idTable[day][hour];
   document.getElementById("passInfo").innerHTML="Passcode: " + passTable[day][hour];
   document.getElementById("browserLink").href="http://zoom.us/wc/join/" + idTable[day][hour];
   document.getElementById("appLink").href="zoommtg://zoom.us/join?action=join&confno=" + idTable[day][hour];
