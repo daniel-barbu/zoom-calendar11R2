@@ -34,7 +34,6 @@ else if (hMin[4] <= min && min < hMin[5]) hour=4;
 else if (hMin[5] <= min && min < hMin[6]) hour=5;
 else if (hMin[6] <= min && min < hMin[7]) hour=6;
 perc=(min-(hMin[hour]+5))/40;
-console.log (min, hour, hMin[hour], perc, hMin[hour]+5-min, hMin[hour]+5-min.toString());
         
 if (typeof idTable[day] == "undefined" || typeof idTable[day][hour] == "undefined")
   document.getElementsByTagName("div")[0].innerHTML='<h1 id="hourInfo">IN AFARA PROGRAMULUI</h1>';
@@ -47,8 +46,8 @@ else {
   if (perc < 0) 
     intervalVar = setInterval(function(){
     document.getElementById("hourProgress").innerHTML="Ora va incepe in ";
-    if (60-new Date().getSeconds()<10) document.getElementById("hourProgress").innerHTML+=hMin[hour]+5-min + ":0" + (60-new Date().getSeconds());
-    else document.getElementById("hourProgress").innerHTML+=hMin[hour]+5-min + ":" + (60-new Date().getSeconds()); 
+    if (60-new Date().getSeconds()<10) document.getElementById("hourProgress").innerHTML+=hMin[hour]+4-min + ":0" + (60-new Date().getSeconds());
+    else document.getElementById("hourProgress").innerHTML+=hMin[hour]+4-min + ":" + (60-new Date().getSeconds()); 
   }, 1000);
   else { 
     if (typeof intervalVar !== "undefined") clearInterval(intervalVar);
