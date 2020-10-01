@@ -36,7 +36,7 @@ else if (hMin[3] <= min && min < hMin[4]) hour=3;
 else if (hMin[4] <= min && min < hMin[5]) hour=4;
 else if (hMin[5] <= min && min < hMin[6]) hour=5;
 else if (hMin[6] <= min && min < hMin[7]) hour=6;
-perc=(min-(hMin[hour]+5))/40+0.01;
+perc=(min-(hMin[hour]+5)+1)/40;
         
 if (typeof idTable[day] == "undefined" || typeof idTable[day][hour] == "undefined")
   document.getElementsByTagName("div")[0].innerHTML='<h1 id="hourInfo">IN AFARA PROGRAMULUI</h1>';
