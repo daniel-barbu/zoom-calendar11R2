@@ -23,9 +23,12 @@ var hMin=[445, 490, 535, 580, 625, 670, 715, 760];
 function parseID(x) {if (x.length==9) return x.substr(0, 3) + " " + x.substr(3, 3) + " " + x.substr(6, 3); else if (x.length==10) return x.substr(0, 3) + " " + x.substr(3, 3) + " " + x.substr(6, 4); else if (x.length==11) return x.substr(0, 3) + " " + x.substr(3, 4) + " " + x.substr(7, 4); else if (x.length==12) return x.substr(0, 4) + " " + x.substr(4, 4) + " " + x.substr(8, 4);}
 function parseTime(x) {if (x<10) return "0"+x; else return x;}
 
+var testVar=579;
+
 function main() {
 var day=new Date().getDay()-1;//0-4 
 var min=new Date().getHours()*60+new Date().getMinutes(), hNow=new Date().getHours() + ":" + parseTime(new Date().getMinutes()), hour; //0-6
+            min=testVar;
 if (hMin[0] <= min && min < hMin[1]) hour=0;
 else if (hMin[1] <= min && min < hMin[2]) hour=1;
 else if (hMin[2] <= min && min < hMin[3]) hour=2;
@@ -33,7 +36,7 @@ else if (hMin[3] <= min && min < hMin[4]) hour=3;
 else if (hMin[4] <= min && min < hMin[5]) hour=4;
 else if (hMin[5] <= min && min < hMin[6]) hour=5;
 else if (hMin[6] <= min && min < hMin[7]) hour=6;
-perc=(min-(hMin[hour]+5))/40;
+perc=(min-(hMin[hour]+5))/40+0.01;
         
 if (typeof idTable[day] == "undefined" || typeof idTable[day][hour] == "undefined")
   document.getElementsByTagName("div")[0].innerHTML='<h1 id="hourInfo">IN AFARA PROGRAMULUI</h1>';
