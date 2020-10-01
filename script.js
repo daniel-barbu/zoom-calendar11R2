@@ -16,7 +16,7 @@ var hourTable=[["-1", "SC", "INFORMATICA", "INFORMATICA", "SPORT", "FRANCEZA"], 
                 ["RELIGIE", "BIOLOGIE", "INFORMATICA", "INFORMATICA", "ENGLEZA", "CHIMIE", "MATEMATICA"], //thursday
                 ["ISTORIE", "MATEMATICA", "ROMANA", "ROMANA", "ENGLEZA", "ENGLEZA"]];                     //friday
 
-var hStart=["7:30", "8:15", "9:00", "9:45", "10:30", "11:15", "12:00"];
+var hStart=["7:30", "8:15", "9:00", "09:45", "10:30", "11:15", "12:00"];
 var hEnd=["8:10", "8:55", "9:40", "10:25", "11:10", "11:55", "12:40"];
 var hMin=[445, 490, 535, 580, 625, 670, 715, 760];
 
