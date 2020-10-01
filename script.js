@@ -20,7 +20,7 @@ var hStart=["7:30", "8:15", "9:00", "9:45", "10:30", "11:15", "12:00"];
 var hEnd=["8:10", "8:55", "9:40", "10:25", "11:10", "11:55", "12:40"];
 var hMin=[445, 490, 535, 580, 625, 670, 715, 760];
 
-function parseID(x) {return x.substr(0, 3) + " " + x.substr(3, 3) + " " + x.substr(6, 4);}
+function parseID(x) {if (x.length==9) return x.substr(0, 3) + " " + x.substr(3, 3) + " " + x.substr(6, 3); else if (x.length==10) return x.substr(0, 3) + " " + x.substr(3, 3) + " " + x.substr(6, 4); else if (x.length==11) return x.substr(0, 3) + " " + x.substr(3, 4) + " " + x.substr(7, 4); else if (x.length==12) return x.substr(0, 4) + " " + x.substr(4, 4) + " " + x.substr(8, 4);}
 function parseTime(x) {if (x<10) return "0"+x; else return x;}
 
 function main() {
@@ -39,7 +39,7 @@ if (typeof idTable[day] == "undefined" || typeof idTable[day][hour] == "undefine
   document.getElementsByTagName("div")[0].innerHTML='<h1 id="hourInfo">IN AFARA PROGRAMULUI</h1>';
 else {
   document.getElementById("hourInfo").innerHTML="Ora actuala: <span id='lucidaText'>" + hourTable[day][hour] +"</span>";
-  document.getElementById("idInfo").innerHTML="Meeting ID: " + idTable[day][hour];
+  document.getElementById("idInfo").innerHTML="Meeting ID: " + parseID(idTable[day][hour]);
   document.getElementById("passInfo").innerHTML="Passcode: " + passTable[day][hour];
   document.getElementById("browserLink").href="http://zoom.us/wc/join/" + idTable[day][hour];
   document.getElementById("appLink").href="zoommtg://zoom.us/join?action=join&confno=" + idTable[day][hour];
