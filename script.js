@@ -44,7 +44,9 @@ else {
   document.getElementById("browserLink").href="http://zoom.us/wc/join/" + idTable[day][hour];
   document.getElementById("appLink").href="zoommtg://zoom.us/join?action=join&confno=" + idTable[day][hour];
   if (perc < 0) 
-    intervalVar = setInterval(function(){document.getElementById("hourProgress").innerHTML="Ora va incepe in " + hMin[hour]+4-min + ":" + parseTime(60-new Date().getSeconds());}, 1000);
+    intervalVar = setInterval(function(){
+      document.getElementById("hourProgress").innerHTML="Ora va incepe in ";
+      document.getElementById("hourProgress").innerHTML+= hMin[hour]+4-min + ":" + parseTime(60-new Date().getSeconds()); }, 1000);
   else { 
     if (typeof intervalVar !== "undefined") clearInterval(intervalVar);
     document.getElementById("hourProgress").innerHTML= hStart[hour] + " |" + "-".repeat(perc*70) + "<span id='whiteText'>|</span>" + "-".repeat((1-perc)*70) + "| " + hEnd[hour] + "<br>" + "<span id='invisibleText'>" + "-".repeat(perc*70-2) + "</span><span id='whiteText'>" + hNow + "</span><span id='invisibleText'>"+ "-".repeat((1-perc)*70-2) + "</span>";}}
