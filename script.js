@@ -23,7 +23,7 @@ var hMin=[445, 490, 535, 580, 625, 670, 715, 760];
 function parseID(x) {if (x.length==9) return x.substr(0, 3) + " " + x.substr(3, 3) + " " + x.substr(6, 3); else if (x.length==10) return x.substr(0, 3) + " " + x.substr(3, 3) + " " + x.substr(6, 4); else if (x.length==11) return x.substr(0, 3) + " " + x.substr(3, 4) + " " + x.substr(7, 4); else if (x.length==12) return x.substr(0, 4) + " " + x.substr(4, 4) + " " + x.substr(8, 4);}
 function parseTime(x) {if (x<10) return "0"+x; else return x;}
 
-var testVar=579;
+var testVar=605;
 
 function main() {
 var day=new Date().getDay()-1;//0-4 
@@ -36,7 +36,7 @@ else if (hMin[3] <= min && min < hMin[4]) hour=3;
 else if (hMin[4] <= min && min < hMin[5]) hour=4;
 else if (hMin[5] <= min && min < hMin[6]) hour=5;
 else if (hMin[6] <= min && min < hMin[7]) hour=6;
-perc=(min-(hMin[hour]+5)+1)/40;
+perc=(min-(hMin[hour]+5))/40;
         
 if (typeof idTable[day] == "undefined" || typeof idTable[day][hour] == "undefined")
   document.getElementsByTagName("div")[0].innerHTML='<h1 id="hourInfo">IN AFARA PROGRAMULUI</h1>';
@@ -52,5 +52,5 @@ else {
       document.getElementById("hourProgress").innerHTML+= hMin[hour]+4-min + ":" + parseTime(60-new Date().getSeconds()); }, 1000);
   else { 
     if (typeof intervalVar !== "undefined") clearInterval(intervalVar);
-    document.getElementById("hourProgress").innerHTML= hStart[hour] + " |" + "-".repeat(perc*70) + "<span id='whiteText'>|</span>" + "-".repeat((1-perc)*70) + "| " + hEnd[hour] + "<br>" + "<span id='invisibleText'>" + "-".repeat(perc*70-2) + "</span><span id='whiteText'>" + hNow + "</span><span id='invisibleText'>"+ "-".repeat((1-perc)*70-2) + "</span>";}}
+    document.getElementById("hourProgress").innerHTML= hStart[hour] + " |" + "-".repeat(perc*70) + "<span id='whiteText'>|</span>" + "-".repeat((1-perc)*70) + "| " + hEnd[hour] + "<br>" + "<span id='invisibleText'>" + "-".repeat(perc*70) + "</span><span id='whiteText'>" + hNow + "</span><span id='invisibleText'>"+ "-".repeat((1-perc)*70) + "</span>";}}
 } main(); setTimeout(function(){main(); setInterval(main, 60000);}, (60-new Date().getSeconds())*1000);
