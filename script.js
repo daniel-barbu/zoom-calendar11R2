@@ -1,20 +1,20 @@
-var idTable=[["-1", "0", "92803342050", "92803342050", "78027691338", "8216620219"],                //monday
-            ["2992554819", "2992554819", "4640596961", "79002124094", "76791166480", "0"],          //tuesday
-            ["4928189003", "7956423044", "4640596961", "4640596961", "0", "3227920578"],            //wednesday
-            ["0", "6306944163", "92803342050", "92803342050", "0", "89999600136", "2992554819"],    //thursday
-            ["4515724423", "2992554819", "7956423044", "7956423044", "4266725480", "4266725480"]];  //friday
+var idTable=[["-1", "01", "02", "03", "04", "05"],        //monday
+             ["10", "11", "12", "13", "14", "15"],        //tuesday
+             ["20", "21", "22", "23", "24", "25"],        //wednesday
+             ["30", "31", "32", "33", "34", "35", "36"],  //thursday
+             ["40", "41", "42", "43", "44", "45"]];       //friday
            
-var passTable=[["-1", "0", "cosbuc11R2", "cosbuc11R2", "n5zcS3", "3vusvY"],               //monday
-                ["mateC", "mateC", "1NpS2Q", "5Zkui8", "3HqWPd", "0"],                    //tuesday
-                ["2aqEhT", "b6z4qD", "1NpS2Q", "1NpS2Q", "0", "8gqSUv"],                  //wednesday
-                ["0", "0JsqgQ", "cosbuc11R2", "cosbuc11R2", "0", "pa5WfX", "mateC"],      //thursday
-                ["806phK", "mateC", "b6z4qD", "b6z4qD", "h2u4g6o8", "h2u4g6o8"]];         //friday
+var passTable=[["-1", "01", "02", "03", "04", "05"],        //monday
+               ["10", "11", "12", "13", "14", "15"],        //tuesday
+               ["20", "21", "22", "23", "24", "25"],        //wednesday
+               ["30", "31", "32", "33", "34", "35", "36"],  //thursday
+               ["40", "41", "42", "43", "44", "45"]];       //friday
 
 var hourTable=[["-1", "SC", "INFORMATICA", "INFORMATICA", "SPORT", "FRANCEZA"],                           //monday
                 ["MATEMATICA", "MATEMATICA", "FIZICA", "ENGLEZA", "ENGLEZA", "DIRIGENTIE"],               //tuesday
                 ["GEOGRAFIE", "ROMANA", "FIZICA", "FIZICA", "FRANCEZA", "ECONOMIE"],                      //wednesday
                 ["RELIGIE", "BIOLOGIE", "INFORMATICA", "INFORMATICA", "ENGLEZA", "CHIMIE", "MATEMATICA"], //thursday
-                ["ISTORIE", "MATEMATICA", "ROMANA", "ROMANA", "ENGLEZA", "ENGLEZA"]];                     //friday
+                ["ROMANA", "ISTORIE", "MATEMATICA", "ROMANA", "ENGLEZA", "ENGLEZA"]];                     //friday
 
 var hStart=["7:30", "8:15", "9:00", "09:45", "10:30", "11:15", "12:00"];
 var hEnd=["8:10", "8:55", "9:40", "10:25", "11:10", "11:55", "12:40"];
